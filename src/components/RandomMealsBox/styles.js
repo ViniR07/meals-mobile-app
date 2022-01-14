@@ -1,17 +1,15 @@
 import styled from "styled-components";
-import { sombra, cinzaBackground } from "../UI/variaveis";
 import { Icon } from "../UI";
 
-export const MealsApp = styled.div`
+export const RandomMealsApp = styled.div`
 	position: relative;
 	max-width: 100%;
 	width: 500px;
 	height: 1000px;
-	margin: 0 auto;
-	background-color: ${cinzaBackground};
-	${sombra}
+	margin: -160px 0 0 0;
 	border-radius: 6px;
 	overflow: hidden;
+    
 `;
 
 export const RandomMeals = styled.div`

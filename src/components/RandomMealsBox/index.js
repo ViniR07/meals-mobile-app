@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import HeaderApp from "../HeaderApp";
 import Meal from "../Meal";
 import seta from "../../assets/setaVoltar.svg";
 import * as S from "./styles";
 
-const RecipeApp = ({ randons }) => {
+const RandomMealsBox = ({ randons }) => {
 	const [current, setCurrent] = useState(0);
 	const length = randons.length;
 
@@ -22,9 +21,8 @@ const RecipeApp = ({ randons }) => {
 	console.log(current, length);
 
 	return (
-		<S.MealsApp>
-			<HeaderApp />
-			<button disabled={current === 0} onClick={prevSlide}>
+		<S.RandomMealsApp>
+			<button style={{'margin': '-800px'}} disabled={current === 0} onClick={prevSlide}>
 				<S.IconNavegationLeft src={seta} />
 			</button>
 			<S.RandomMeals
@@ -53,8 +51,8 @@ const RecipeApp = ({ randons }) => {
 			<button onClick={nextSlide} disabled={current === length - 1}>
 				<S.IconNavegationRight src={seta} />
 			</button>
-		</S.MealsApp>
+		</S.RandomMealsApp>
 	);
 };
 
-export default RecipeApp;
+export default RandomMealsBox;
