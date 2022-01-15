@@ -1,10 +1,11 @@
-import React, { Suspense } from "react";
+import React, { Suspense, lazy } from "react";
 import styled from "styled-components";
 import GlobalStyle from "./components/GlobalStyle";
-import RandomMealsBox from "./components/RandomMealsBox";
 import HeaderApp from "./components/HeaderApp";
 import CategoriesMeals from "./components/CategoriesMeals";
 import { cinzaBackground, sombra } from "./components/UI/variaveis";
+
+const RandomMealsBox = lazy(() => import("./components/RandomMealsBox"))
 
 const SectionApp = styled.section`
 	width: 100vw;
@@ -21,6 +22,7 @@ const MealsApp = styled.div`
 	${sombra}
 	border-radius: 6px;
 	overflow: hidden;
+    padding-bottom: 10rem;
 `;
 
 function App() {
@@ -29,7 +31,7 @@ function App() {
 			<GlobalStyle />
 			<MealsApp>
 				<HeaderApp aoEnviar={aoEnviar} />
-                <Suspense fallback={<h1 style={{'position': 'absolute', 'top': '12px'}}>Loading...</h1>} >
+                <Suspense fallback={<h1>Loading...</h1>} >
 				    <RandomMealsBox />
                 </Suspense>
 				<CategoriesMeals />

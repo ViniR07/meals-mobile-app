@@ -1,45 +1,22 @@
-import React, { useReducer } from 'react';
-import styled from 'styled-components'
-import ListForCategory from '../ListForCategory';
+import React, { Suspense, lazy, useReducer } from 'react';
 import { BotaoSecundario } from '../UI';
-import { fonteSecundaria, roxoGradiente } from '../UI/variaveis';
+import { CategoriesTitle, CategoryContainer } from './style';
 
+const ListForCategory = lazy(() => import('../ListForCategory'))
 
-const CategoriesTitle = styled.h1`
-	margin-top: 2rem;
-	text-align: center;
-	font-size: 2.4rem;
-	text-decoration: underline ${roxoGradiente};
-`;
-
-const CategoriesDescription = styled.p`
-	font-size: 1rem;
-	font-family: ${fonteSecundaria};
-	margin: 1rem 0 2rem 0;
-	padding: 0 2rem;
-`;
-
-const CategoryContainer = styled.div`
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-`;
-
-const CategoryMeals = ({ title, description }) => {
+const CategoryMeals = ({ title }) => {
     const [showMore, setShowMore] = useReducer(state => !state ,false);
 
     console.log(title);
     return(
         <CategoryContainer>
 				<CategoriesTitle>{title}</CategoriesTitle>
-				<CategoriesDescription>
-					{description}
-				</CategoriesDescription>
 				<BotaoSecundario onClick={setShowMore}>
-					<span className="span">{showMore ? 'Fechar Meals' : 'Vizualizar Meals'}</span>
+					<span className="span">{showMore ? 'Close Meals' : 'View Meals'}</span>
 				</BotaoSecundario>
-                {showMore ? <ListForCategory category={title} /> : ''}
+                <Suspense fallback={<h1>Loading...</h1>}>
+                    {showMore ? <ListForCategory category={title} /> : ''}
+                </Suspense>
 				
 		</CategoryContainer>
     );

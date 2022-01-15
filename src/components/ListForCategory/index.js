@@ -7,6 +7,13 @@ const ListDiv = styled.div`
     margin-left: -40px;
 `;
 
+const ErrorMessage = styled.p`
+    font-size: 1.5rem;
+    margin-top: 2.5rem;
+    text-align: center;
+    padding: 0 2rem 0 5rem;
+`;
+
 const ListForCategory = ({ category } ) => {
 	const [resultMeals, setResultMeals] = useState({meals: []});
     
@@ -33,7 +40,7 @@ const ListForCategory = ({ category } ) => {
 						key={id}
 					/>
 				);
-			}) : ''}
+			}) : <ErrorMessage>Sorry, I couldn't find any meals for this category!</ErrorMessage>}
 
 		</ListDiv>
 	);

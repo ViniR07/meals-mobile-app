@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { gradienteAzul } from "./variaveis";
+import { gradienteAzul, roxoGradiente } from "./variaveis";
 
 export const Botao = styled.button`
     font-size: 18px;
@@ -68,6 +68,37 @@ export const BotaoSecundario = styled.button`
    
    :hover .span {
     background: none;
+   }
+   
+   :active {
+    transform: scale(0.9);
+   }
+`;
+
+export const BotaoTerciario = styled.button`
+
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+    padding: 15px 30px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: ${roxoGradiente};
+    background: transparent;
+    cursor: pointer;
+    transition: ease-out 0.5s;
+    border-radius: 30px;
+    border: 2px solid ${roxoGradiente};
+    border-radius: 10px;
+    box-shadow: inset 0 0 0 0 ${roxoGradiente};
+
+   
+   :hover {
+    color: white;
+    box-shadow: inset 0 -100px 0 0 ${roxoGradiente};
    }
    
    :active {
