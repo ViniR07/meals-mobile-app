@@ -1,6 +1,13 @@
 import styled from "styled-components";
 import { fonteSecundaria, roxoGradiente } from "../UI/variaveis";
 
+export const CategoryContainer = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+    transition: .5s;
+`;
 
 export const CategoriesTitle = styled.h1`
 	margin: 2rem 0;
@@ -16,9 +23,3 @@ export const CategoriesDescription = styled.p`
 	padding: 0 2rem;
 `;
 
-export const CategoryContainer = styled.div`
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-`;

@@ -22,7 +22,7 @@ const ContainerTitle = styled.h1`
 	margin-bottom: 1.5rem;
 `;
 
-const CategoriesMeals = () => {
+const CategoriesMeals = ({ pesquisou }) => {
 	const [categories, setCategories] = useState([]);
 	const [showCategory, setShowCategory] = useState("");
 
@@ -43,15 +43,16 @@ const CategoriesMeals = () => {
 
 	console.log(showCategory);
 	return (
-		<CategoriesContainer>
+		<CategoriesContainer style={{'marginTop': `${pesquisou ? '50px' : '600px' }`}}>
 			<ContainerTitle>Categories</ContainerTitle>
-			{categories.map((resp, cat) => {
+			{categories.map((resp, id) => {
 				return (
 					<BotaoTerciario
 						className={
 							showCategory === resp.strCategory ? "active" : ""
 						}
 						onClick={handleCategory}
+                        key={id}
 					>
 						{resp.strCategory}
 					</BotaoTerciario>

@@ -5,7 +5,7 @@ import lupa from "../../assets/lupa.svg";
 import { Icon } from "../UI";
 
 
-const HeaderApp = ({ aoEnviar }) => {
+const HeaderApp = ({ aoEnviar, pesquisou }) => {
 	const [click, setClick] = useState(false);
 
 	function handleClick() {
@@ -20,7 +20,7 @@ const HeaderApp = ({ aoEnviar }) => {
 	}
 
 	return (
-		<S.HeaderContainer>
+		<S.HeaderContainer style={{'paddingBottom': `${pesquisou ? '2rem' : '6rem'}`}}>
 			<S.Icone src={menu} />
 			<S.TituloHeader
 				style={{ display: `${click ? "none" : "inherit"}` }}
@@ -33,7 +33,7 @@ const HeaderApp = ({ aoEnviar }) => {
 					placeholder="Qual o prato de hoje?"
 					style={{ width: `${click ? "220px" : "0px"}` }}
 				/>
-				<S.SearchIconBtn href="#" onClick={handleClick}>
+				<S.SearchIconBtn onClick={handleClick}>
 					<Icon src={lupa} />
 				</S.SearchIconBtn>
 			</S.SearchContainer>

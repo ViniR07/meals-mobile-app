@@ -9,6 +9,7 @@ export const HeaderContainer = styled.div`
     padding: 2rem 1.5rem 6rem 1.5rem;
     border-top-right-radius: 6px;
     border-top-left-radius: 6px;
+    transition: .4s;
 `;
 
 export const TituloHeader = styled.h2`
