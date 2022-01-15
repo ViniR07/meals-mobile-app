@@ -20,13 +20,6 @@ export const TituloHeader = styled.h2`
     transition: .4s;
 `;
 
-export const Icone = styled.img`
-    height: 40px;
-    width: 30px;
-    cursor: pointer;
-    filter: invert(100%);
-`;
-
 export const SearchContainer = styled.form`
 	height: 40px;
 	background-color: ${brancoBackground};

@@ -111,3 +111,9 @@ export const Icon = styled.img`
 	width: 30px;
 	cursor: pointer;
 `;
+
+export const WhiteIcon = styled(Icon)`
+   height: 35px;
+   width: 35px;
+   filter: invert(100%);
+`;

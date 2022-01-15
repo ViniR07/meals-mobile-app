@@ -1,7 +1,6 @@
 import React from "react";
 import { Botao, Icon } from "../UI";
-import IconTalheres from '../../assets/talheres.svg';
-import iconLocalizacao from '../../assets/localizacao.svg';
+import icons from '../../assets';
 import * as S from './styles';
 
 const Meal = ({
@@ -9,7 +8,7 @@ const Meal = ({
 	descricao,
 	srcImagem,
 	categoria,
-	localizacao,
+	localization,
 	style,
 }) => {
 	return (
@@ -21,12 +20,12 @@ const Meal = ({
 				<h2>{titulo}</h2>
 				<S.IconDiv>
 					<S.IconBox>
-						<Icon src={IconTalheres} />
+						<Icon src={icons.talheres} />
 						<span style={{ marginLeft: 5 }}>{categoria}</span>
 					</S.IconBox>
 					<S.IconBox>
-						<Icon src={iconLocalizacao} />
-						<span style={{ marginLeft: 5 }}>{localizacao}</span>
+						<Icon src={icons.localizacao} />
+						<span style={{ marginLeft: 5 }}>{localization}</span>
 					</S.IconBox>
 				</S.IconDiv>
 				<S.TextCard>{descricao.substring(0, 120) + "..."}</S.TextCard>

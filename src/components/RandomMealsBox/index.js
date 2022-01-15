@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Meal from "../Meal";
-import seta from "../../assets/setaVoltar.svg";
+import icons from '../../assets'
 import * as S from "./styles";
 import { getRandomMeals } from "../../api";
 
@@ -40,7 +40,7 @@ const RandomMealsBox = () => {
 				disabled={current === 0}
 				onClick={prevSlide}
 			>
-				<S.IconNavegationLeft src={seta} />
+				<S.IconNavegationLeft src={icons.setaVoltar} />
 			</button>
 			<S.RandomMeals
 				style={{
@@ -66,7 +66,7 @@ const RandomMealsBox = () => {
 				})}
 			</S.RandomMeals>
 			<button onClick={nextSlide} disabled={current === length - 1}>
-				<S.IconNavegationRight src={seta} />
+				<S.IconNavegationRight src={icons.setaVoltar} />
 			</button>
 		</>
 	);

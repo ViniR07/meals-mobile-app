@@ -22,6 +22,10 @@ export const MealCard = styled.div`
 	text-align: center;
 	margin-left: 2rem;
 	transition: 0.5s all;
+
+    @media (max-width: 725px) {
+        width: 310px;
+    }
 `;
 
 export const TextCard = styled.p`

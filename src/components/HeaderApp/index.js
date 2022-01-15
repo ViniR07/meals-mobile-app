@@ -1,8 +1,8 @@
-import menu from "../../assets/menuHamburguer.svg";
 import * as S from "./styles";
 import React, { useState } from "react";
-import lupa from "../../assets/lupa.svg";
+import icons from "../../assets/index";
 import { Icon } from "../UI";
+import NavBar from "../NavBar";
 
 
 const HeaderApp = ({ aoEnviar, pesquisou }) => {
@@ -21,7 +21,8 @@ const HeaderApp = ({ aoEnviar, pesquisou }) => {
 
 	return (
 		<S.HeaderContainer style={{'paddingBottom': `${pesquisou ? '2rem' : '6rem'}`}}>
-			<S.Icone src={menu} />
+			<NavBar />
+
 			<S.TituloHeader
 				style={{ display: `${click ? "none" : "inherit"}` }}
 			>
@@ -34,7 +35,7 @@ const HeaderApp = ({ aoEnviar, pesquisou }) => {
 					style={{ width: `${click ? "220px" : "0px"}` }}
 				/>
 				<S.SearchIconBtn onClick={handleClick}>
-					<Icon src={lupa} />
+					<Icon src={icons.lupa} />
 				</S.SearchIconBtn>
 			</S.SearchContainer>
 		</S.HeaderContainer>
