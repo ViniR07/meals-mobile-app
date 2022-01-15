@@ -1,11 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Meal from "../Meal";
 import seta from "../../assets/setaVoltar.svg";
 import * as S from "./styles";
+import { getRandomMeals } from "../../api";
 
-const RandomMealsBox = ({ randons }) => {
+const RandomMealsBox = () => {
+    const [random, setRandom] = useState([]);
 	const [current, setCurrent] = useState(0);
-	const length = randons.length;
+	const length = random.length;
+
+    useEffect( () => {
+        const qtd = 5;
+        const randons = [];
+        getRandomMeals(qtd).then((meals) => {
+            console.log(meals);
+            for (let i = 0; i < qtd; i++) {
+                randons.push(meals[i].meals[0]);
+            }
+            setRandom(randons);
+        });
+    }, [])
 
 	const nextSlide = () => {
 		setCurrent(current === length - 1 ? 0 : current + 1);
@@ -15,14 +29,17 @@ const RandomMealsBox = ({ randons }) => {
 		setCurrent(current === 0 ? length - 1 : current - 1);
 	};
 
-	if (!Array.isArray(randons) || randons.length <= 0) {
+	if (!Array.isArray(random) || random.length <= 0) {
 		return null;
 	}
-	console.log(current, length);
 
 	return (
-		<S.RandomMealsApp>
-			<button style={{'margin': '-800px'}} disabled={current === 0} onClick={prevSlide}>
+		<>
+			<button
+				style={{ margin: "-800px" }}
+				disabled={current === 0}
+				onClick={prevSlide}
+			>
 				<S.IconNavegationLeft src={seta} />
 			</button>
 			<S.RandomMeals
@@ -30,7 +47,7 @@ const RandomMealsBox = ({ randons }) => {
 					transform: `translateX(-${current * (100 / length)}%)`,
 				}}
 			>
-				{randons.map((meal, id) => {
+				{random.map((meal, id) => {
 					return (
 						<Meal
 							style={{
@@ -38,11 +55,11 @@ const RandomMealsBox = ({ randons }) => {
 									current === id ? "scale(1.1)" : "scale(1)"
 								}`,
 							}}
-							titulo={meal.strMeal}
-							descricao={meal.strInstructions}
-							srcImagem={meal.strMealThumb}
-							categoria={meal.strCategory}
-							localizacao={meal.strArea}
+							titulo={meal?.strMeal}
+							descricao={meal?.strInstructions}
+							srcImagem={meal?.strMealThumb}
+							categoria={meal?.strCategory}
+							localizacao={meal?.strArea}
 							key={id}
 						/>
 					);
@@ -51,8 +68,9 @@ const RandomMealsBox = ({ randons }) => {
 			<button onClick={nextSlide} disabled={current === length - 1}>
 				<S.IconNavegationRight src={seta} />
 			</button>
-		</S.RandomMealsApp>
+		</>
 	);
 };
 
 export default RandomMealsBox;
+

@@ -8,5 +8,7 @@ export const preto = '#333333';
 export const azulVerdeMarca = '#22F0CF';
 export const azulMarca = '#03AEF4';
 export const brancoBackground = '#fdfdfd';
+export const roxoGradiente = '#8E2DE2'
+export const fonteSecundaria = 'Open Sans, sans serif';
 
 export const sombra = ` box-shadow: 0 0 30px rgba(7,51,84,0.17);`

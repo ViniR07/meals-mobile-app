@@ -35,6 +35,23 @@ export const getMealsCategories = () => {
 	return categories;
 };
 
+export const getMealsInCategories = async (cat, m) => {
+    const categories = await getMealsCategories();
+    let meals = {};
+    for(let i = 0; i< cat; i++) {
+        let categoria = categories.categories[i].strCategory;
+        console.log(categoria);
+        let newMeals = await getMealsByFilterCategory(categoria); 
+        const mealCategory = {categoria: []};
+        for(let i = 0; i<m; i++){
+            mealCategory.categoria.push(newMeals.meals[i]);
+        }
+        meals = {...meals, ...mealCategory};
+        console.log(meals, mealCategory);
+    }
+    console.log(meals);
+}
+
 export const getMealsByFilterCategory = (category) => {
 	const meals = conectaApi(
 		`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`
@@ -43,8 +60,8 @@ export const getMealsByFilterCategory = (category) => {
 	return meals;
 };
 
-export const getMelsByFilterSearch = (search) => {
-	const meals = conectaApi(
+export const getMelsByFilterSearch = async (search) => {
+	const meals = await conectaApi(
 		`https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`
 	);
 	console.log(meals);

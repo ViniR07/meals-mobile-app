@@ -57,6 +57,4 @@ export const RecipeImage = styled.div`
 	background-position: center;
 	height: 230px;
 	width: 100%;
-	margin-bottom: -10px;
-	z-index: -1;
 `;
