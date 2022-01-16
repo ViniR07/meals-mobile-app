@@ -16,7 +16,7 @@ const SearchMealsContainer = styled.div`
 
 const SearchMeals = ({ term }) => {
 	const [searchMeals, setSearchMeals] = useState("");
-    const aoAbrir = useContext(AoAbrir);
+	const aoAbrir = useContext(AoAbrir);
 
 	useEffect(() => {
 		getMelsByFilterSearch(term).then((resp) => {
@@ -38,7 +38,7 @@ const SearchMeals = ({ term }) => {
 								srcImagem={meal?.strMealThumb}
 								categoria={meal?.strCategory}
 								localizacao={meal?.strArea}
-                                aoAbrir={aoAbrir}
+								aoAbrir={aoAbrir}
 								key={id}
 							/>
 						);

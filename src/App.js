@@ -13,14 +13,13 @@ const RandomMealsBox = lazy(() => import("./components/RandomMealsBox"));
 const SectionApp = styled.section`
 	width: 100vw;
 	padding: 4rem 0;
-
 	background-color: #eee;
 `;
 
 const MealsApp = styled.div`
 	position: relative;
 	max-width: 100%;
-    overflow: hidden;
+	overflow: hidden;
 	width: 500px;
 	margin: 0 auto;
 	background-color: ${cinzaBackground};
@@ -28,25 +27,25 @@ const MealsApp = styled.div`
 	border-radius: 6px;
 	padding-bottom: 10rem;
 
-    #header {
-        top: -10px;
-        left: 0px;
-        right: 0px;
-        transition: top 0.5s ease-in-out;
-    }
-    #header.sticky {
-        position: fixed;
-        top: 0;
-        right: 80px;
-        left: 100px;
-        z-index: 10000;
-        padding-bottom: 2rem;
+	#header {
+		top: -10px;
+		left: 0px;
+		right: 0px;
+		transition: top 0.5s ease-in-out;
+	}
+	#header.sticky {
+		position: fixed;
+		top: 0;
+		right: 80px;
+		left: 100px;
+		z-index: 10000;
+		padding-bottom: 2rem;
 
-        @media (max-width: 425px) {
-            left: 0px;
-            right: 10px;
-        }
-    }
+		@media (max-width: 425px) {
+			left: 0px;
+			right: 10px;
+		}
+	}
 `;
 
 function App() {
@@ -64,10 +63,9 @@ function App() {
 		toggle(true);
 	}
 
-
 	return (
 		<SectionApp>
-			<MealsApp >
+			<MealsApp>
 				<GlobalStyle />
 				<AoAbrir.Provider value={aoAbrir}>
 					<HeaderApp aoEnviar={aoEnviar} pesquisou={search} />

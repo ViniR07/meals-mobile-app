@@ -1,9 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { Icon, WhiteIcon } from "../UI";
+import { Icon } from "../UI";
 import {
-	brancoBackground,
-	gradienteAzul,
 	preto,
 	roxoGradiente,
 } from "../UI/variaveis";

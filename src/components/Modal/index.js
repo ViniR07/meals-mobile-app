@@ -64,11 +64,18 @@ const Modal = ({
 								<IconDiv>
 									<IconBox>
 										<Icon src={icons.localizacao} />
-										<span style={{'marginLeft': '5px'}}>{categoria}</span>
+										<span style={{ marginLeft: "5px" }}>
+											{categoria}
+										</span>
 									</IconBox>
 									<IconBox>
-										<Icon style={{'marginLeft': '15px'}} src={icons.talheres} />
-										<span style={{'marginLeft': '5px'}}>{localizacao}</span>
+										<Icon
+											style={{ marginLeft: "15px" }}
+											src={icons.talheres}
+										/>
+										<span style={{ marginLeft: "5px" }}>
+											{localizacao}
+										</span>
 									</IconBox>
 								</IconDiv>
 								<S.ModalDescription>
