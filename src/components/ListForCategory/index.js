@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 import { getMelsByFilterSearch } from "../../api";
+import AoAbrir from "../../contexts/AoAbrir";
 import Meal from "../Meal";
 
 const ListDiv = styled.div`
@@ -16,10 +17,10 @@ const ErrorMessage = styled.p`
 
 const ListForCategory = ({ category } ) => {
 	const [resultMeals, setResultMeals] = useState({meals: []});
-    
+    const aoAbrir = useContext(AoAbrir);
+
 	useEffect(() => {
         if(category) {
-            console.log(category);
             getMelsByFilterSearch(category).then((res) => {
                 setResultMeals(res);
             });
@@ -37,6 +38,7 @@ const ListForCategory = ({ category } ) => {
 						srcImagem={meal?.strMealThumb}
 						categoria={meal?.strCategory}
 						localizacao={meal?.strArea}
+                        aoAbrir={aoAbrir}
 						key={id}
 					/>
 				);

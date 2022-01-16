@@ -8,7 +8,7 @@ import { roxoGradiente } from "../UI/variaveis";
 const CategoriesContainer = styled.div`
 	padding: 0 0.5rem;
 	text-align: center;
-	margin-top: 600px;
+    margin-top: 4rem;
 
 	.active {
 		transform: scale(0.97);
@@ -41,9 +41,8 @@ const CategoriesMeals = ({ pesquisou }) => {
 		});
 	}, []);
 
-	console.log(showCategory);
 	return (
-		<CategoriesContainer style={{'marginTop': `${pesquisou ? '50px' : '600px' }`}}>
+		<CategoriesContainer >
 			<ContainerTitle>Categories</ContainerTitle>
 			{categories.map((resp, id) => {
 				return (

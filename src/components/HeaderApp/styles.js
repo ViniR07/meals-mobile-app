@@ -6,10 +6,13 @@ export const HeaderContainer = styled.div`
     text-align: center;
     display: flex;
     justify-content: space-between;
-    padding: 2rem 1.5rem 6rem 1.5rem;
+    padding-top: 2rem;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
     border-top-right-radius: 6px;
     border-top-left-radius: 6px;
     transition: .4s;
+    position: absolute;
 `;
 
 export const TituloHeader = styled.h2`

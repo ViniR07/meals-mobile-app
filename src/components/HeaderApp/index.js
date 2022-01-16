@@ -1,12 +1,33 @@
 import * as S from "./styles";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import icons from "../../assets/index";
 import { Icon } from "../UI";
 import NavBar from "../NavBar";
 
+let scroll = 0;
+let timeout;
 
 const HeaderApp = ({ aoEnviar, pesquisou }) => {
 	const [click, setClick] = useState(false);
+	const [sticky, setSticky] = useState(false);
+
+	useEffect(() => {
+		window.onscroll = () => {
+			if (timeout) {
+				clearTimeout(timeout);
+			}
+
+			timeout = setTimeout(() => {
+				if (scroll !== window.scrollY && window.scrollY > 10) {
+					setSticky(true);
+				} else {
+					setSticky(false);
+				}
+
+				scroll = window.scrollY;
+			}, 10);
+		};
+	}, []);
 
 	function handleClick() {
 		setClick(!click);
@@ -18,9 +39,18 @@ const HeaderApp = ({ aoEnviar, pesquisou }) => {
 		aoEnviar(valor);
 		e.target.reset();
 	}
+	console.log(scroll, window.scrollY);
 
 	return (
-		<S.HeaderContainer style={{'paddingBottom': `${pesquisou ? '2rem' : '6rem'}`}}>
+		<S.HeaderContainer
+			className={sticky ? "sticky" : null}
+			id="header"
+			style={{
+				paddingBottom: `${
+					pesquisou || window.scrollY > 10 ? "2rem" : "6rem"
+				}`,
+			}}
+		>
 			<NavBar />
 
 			<S.TituloHeader

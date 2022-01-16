@@ -1,13 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Meal from "../Meal";
 import icons from '../../assets'
 import * as S from "./styles";
 import { getRandomMeals } from "../../api";
+import AoAbrir from "../../contexts/AoAbrir";
 
 const RandomMealsBox = () => {
     const [random, setRandom] = useState([]);
 	const [current, setCurrent] = useState(0);
-	const length = random.length;
+	const aoAbrir = useContext(AoAbrir);
+    const length = random.length;
+
 
     useEffect( () => {
         const qtd = 5;
@@ -46,6 +49,7 @@ const RandomMealsBox = () => {
 				style={{
 					transform: `translateX(-${current * (100 / length)}%)`,
 				}}
+                $length={length}
 			>
 				{random.map((meal, id) => {
 					return (
@@ -60,6 +64,7 @@ const RandomMealsBox = () => {
 							srcImagem={meal?.strMealThumb}
 							categoria={meal?.strCategory}
 							localizacao={meal?.strArea}
+                            aoAbrir={aoAbrir}
 							key={id}
 						/>
 					);

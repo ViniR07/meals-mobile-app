@@ -8,8 +8,9 @@ const Meal = ({
 	descricao,
 	srcImagem,
 	categoria,
-	localization,
+	localizacao,
 	style,
+    aoAbrir
 }) => {
 	return (
 		<S.MealCard style={style}>
@@ -25,11 +26,11 @@ const Meal = ({
 					</S.IconBox>
 					<S.IconBox>
 						<Icon src={icons.localizacao} />
-						<span style={{ marginLeft: 5 }}>{localization}</span>
+						<span style={{ marginLeft: 5 }}>{localizacao}</span>
 					</S.IconBox>
 				</S.IconDiv>
 				<S.TextCard>{descricao.substring(0, 120) + "..."}</S.TextCard>
-				<Botao>Receita Completa</Botao>
+				<Botao onClick={ e => aoAbrir({titulo, srcImagem, localizacao, categoria, descricao})}>Receita Completa</Botao>
 			</S.MainCard>
 		</S.MealCard>
 	);

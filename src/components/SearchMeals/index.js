@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 import { getMelsByFilterSearch } from "../../api";
+import AoAbrir from "../../contexts/AoAbrir";
 import Meal from "../Meal";
 
 const SearchTitle = styled.h1`
@@ -15,6 +16,7 @@ const SearchMealsContainer = styled.div`
 
 const SearchMeals = ({ term }) => {
 	const [searchMeals, setSearchMeals] = useState("");
+    const aoAbrir = useContext(AoAbrir);
 
 	useEffect(() => {
 		getMelsByFilterSearch(term).then((resp) => {
@@ -36,6 +38,7 @@ const SearchMeals = ({ term }) => {
 								srcImagem={meal?.strMealThumb}
 								categoria={meal?.strCategory}
 								localizacao={meal?.strArea}
+                                aoAbrir={aoAbrir}
 								key={id}
 							/>
 						);

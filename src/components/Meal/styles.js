@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { brancoBackground, sombra } from '../UI/variaveis';
+import styled from "styled-components";
+import { brancoBackground, sombra } from "../UI/variaveis";
 
 export const HeaderCard = styled.header`
 	width: 100%;
@@ -23,9 +23,9 @@ export const MealCard = styled.div`
 	margin-left: 2rem;
 	transition: 0.5s all;
 
-    @media (max-width: 725px) {
-        width: 310px;
-    }
+	@media (max-width: 725px) {
+		// width: 310px;
+	}
 `;
 
 export const TextCard = styled.p`
