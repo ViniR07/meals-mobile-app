@@ -45,7 +45,6 @@ const Modal = ({
 		return () => document.addEventListener("keydown", keyPress);
 	}, [keyPress]);
 
-	console.log(showMore);
 	return (
 		<>
 			{showModal ? (

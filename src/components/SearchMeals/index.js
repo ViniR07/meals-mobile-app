@@ -24,7 +24,6 @@ const SearchMeals = ({ term }) => {
 		});
 	});
 
-	console.log(searchMeals);
 	return (
 		<SearchMealsContainer>
 			<SearchTitle>Search Results</SearchTitle>

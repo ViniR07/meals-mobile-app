@@ -30,7 +30,7 @@ const Meal = ({
 					</S.IconBox>
 				</S.IconDiv>
 				<S.TextCard>{descricao.substring(0, 120) + "..."}</S.TextCard>
-				<Botao onClick={ e => aoAbrir({titulo, srcImagem, localizacao, categoria, descricao})}>Receita Completa</Botao>
+				<Botao onClick={ e => aoAbrir({titulo, srcImagem, localizacao, categoria, descricao})}>Complete Recipe</Botao>
 			</S.MainCard>
 		</S.MealCard>
 	);

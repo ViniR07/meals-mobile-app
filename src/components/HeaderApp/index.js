@@ -4,28 +4,17 @@ import icons from "../../assets/index";
 import { Icon } from "../UI";
 import NavBar from "../NavBar";
 
-let scroll = 0;
-let timeout;
-
 const HeaderApp = ({ aoEnviar, pesquisou }) => {
 	const [click, setClick] = useState(false);
 	const [sticky, setSticky] = useState(false);
 
 	useEffect(() => {
 		window.onscroll = () => {
-			if (timeout) {
-				clearTimeout(timeout);
+			if (window.scrollY > 10) {
+				setSticky(true);
+			} else {
+				setSticky(false);
 			}
-
-			timeout = setTimeout(() => {
-				if (scroll !== window.scrollY && window.scrollY > 10) {
-					setSticky(true);
-				} else {
-					setSticky(false);
-				}
-
-				scroll = window.scrollY;
-			}, 10);
 		};
 	}, []);
 
@@ -39,7 +28,6 @@ const HeaderApp = ({ aoEnviar, pesquisou }) => {
 		aoEnviar(valor);
 		e.target.reset();
 	}
-	console.log(scroll, window.scrollY);
 
 	return (
 		<S.HeaderContainer
@@ -56,7 +44,7 @@ const HeaderApp = ({ aoEnviar, pesquisou }) => {
 			<S.TituloHeader
 				style={{ display: `${click ? "none" : "inherit"}` }}
 			>
-				VD Receitas
+				VD Meals
 			</S.TituloHeader>
 			<S.SearchContainer onSubmit={handleSubmit}>
 				<S.SearchInput

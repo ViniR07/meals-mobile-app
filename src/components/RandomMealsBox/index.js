@@ -16,7 +16,6 @@ const RandomMealsBox = () => {
         const qtd = 5;
         const randons = [];
         getRandomMeals(qtd).then((meals) => {
-            console.log(meals);
             for (let i = 0; i < qtd; i++) {
                 randons.push(meals[i].meals[0]);
             }
