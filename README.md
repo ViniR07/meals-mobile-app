@@ -30,7 +30,7 @@ App created for mobile devices with ReactJs, view the bests recipes for you cook
 In the terminal, clone the project:
 
 ```
-https://github.com/ViniR07/meals-mobile-app.git
+git clone https://github.com/ViniR07/meals-mobile-app.git
 ```
 
 After that go to the repository and run the command `npm install` to install the project dependencies:
