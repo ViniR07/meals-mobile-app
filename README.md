@@ -1,8 +1,10 @@
 # Prototype for Recipes/Meals App
 
+<div>
 <img src="https://thumbs2.imgbox.com/2d/4b/XANcmzdC_t.png" />
 <img src="https://thumbs2.imgbox.com/fb/bd/8rw85V9f_t.png" />
-
+</div>
+  
 ## Description
 App created for mobile devices with ReactJs, view the bests recipes for you cook skill!
 
