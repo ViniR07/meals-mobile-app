@@ -6,7 +6,7 @@
 </div>
   
 ## Description
-App created for mobile devices with ReactJs, view the bests recipes for you cook skill!
+App created for mobile devices with ReactJs, view the bests recipes for you cooking skill!
 
 > 🛠 Project being finished 🛠
 
