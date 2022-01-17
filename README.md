@@ -19,34 +19,38 @@ App created for mobile devices with ReactJs, view the bests recipes for you cook
   
 ## Features :hammer:
 
-- `Formulário dividido em etapas`: ao todo são 5 etapas até o submit final
-- `Verificações de CPF e Senha`: verificações completas de tamanho e caracteres
-- `Navegação interativa`: possibilidade de navegação entre as etapas do formulário
-- `Fácil reúso`: rapidamente e facilmente personalizável
+- `Integrated search bar`: search among hundreds of recipes!
+- `Menu bar for best navigation`: browse quickly in this app!
+- `Random meals`: try different meals every load!
+- `Category filter`: easily filter meals with this feature!
+- `Modal for the full recipes`: check everything to make your own dish!
 
-## Como rodar a aplicação :arrow_forward:
+## How to run the application :arrow_forward:
 
-No terminal, clone o projeto:
+In the terminal, clone the project:
 
 ```
-git clone https://github.com/ViniR07/FormularioReact.git
+https://github.com/ViniR07/meals-mobile-app.git
 ```
 
-Após isso acesse o repositório e rode o comando `npm install` para instalar as dependências do projeto:
+After that go to the repository and run the command `npm install` to install the project dependencies:
 
 ```
 npm install
 ```
-
-Por fim, podemos rodar o Formulário com o comando `npm start`:
+Finally, we can run the App with the `npm start` command:
 
 ```
 npm start
 ```
 
-## Melhorias 
+## Improvements 
 
-Ideias de melhorias a serem consideradas no projeto
+Improvement ideas to be considered in the project:
 
-- Melhorar as mensagens de erro dos campo
-- Revisar lógica da seleção produto
+- Create pages for integration with Navbar
+- Integrate the React Router for this improvement
+- Improve the responsive
+- Adjust the Meal Modal for best view
+- Improve the Mobile UX for selection for categories
+- Add sign up form and interface for log in
