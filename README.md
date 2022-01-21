@@ -52,5 +52,5 @@ Improvement ideas to be considered in the project:
 - Integrate the React Router for this improvement
 - Improve the responsive
 - Adjust the Meal Modal for best view
-- Improve the Mobile UX for selection for categories
+- Improve the Mobile UX for categories selection
 - Add sign up form and interface for log in
