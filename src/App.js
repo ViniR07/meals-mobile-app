@@ -69,9 +69,9 @@ function App() {
 				<GlobalStyle />
 				<AoAbrir.Provider value={aoAbrir}>
 					<HeaderApp aoEnviar={aoEnviar} pesquisou={search} />
-					<Suspense fallback={<h1>Loading...</h1>}>
+					{/* <Suspense fallback={<h1>Loading...</h1>}> */}
 						{search ? "" : <RandomMealsBox />}
-					</Suspense>
+					{/* </Suspense> */}
 					{search ? <SearchMeals term={search} /> : ""}
 					<CategoriesMeals pesquisou={search} />
 					<Modal
